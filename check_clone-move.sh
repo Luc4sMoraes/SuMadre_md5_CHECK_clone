@@ -19,7 +19,7 @@ lin=1
 
 while [ $TEMPO -le 600 ]
 do
-for i in $(ls * | xargs md5sum 2> /dev/null | cut -d" " -f1 ); do
+for i in $(ls | xargs md5sum 2> /dev/null | cut -d" " -f1 ); do
 echo ">> testando MD5"=$i "CONTAGEM nº" $for "<<"
 # recheck
 sleep 0.5
@@ -28,7 +28,7 @@ sleep 0.5
     #cont=$[$cont+1]
     lin=$[$cont]
     #for z in ${vetor[@]:$cont}; do
-    for z in $(ls * | xargs md5sum 2> /dev/null | cut -d" " -f1 | tail -n +$lin ); do
+    for z in $(ls | xargs md5sum 2> /dev/null | cut -d" " -f1 | tail -n +$lin ); do
     #arq= $(ls  | md5sum 2> /dev/null | cut -d" " -f3 | head -n  | tail -n 1)
     
     ARQ=$(ls  | xargs md5sum 2> /dev/null | cut -d" " -f3 | head -n $lin | tail -n 1)
