@@ -67,6 +67,7 @@ sleep 1
 #done
 echo OK
 
+#fdupes -frnA -Nd teste2/
 
 #echo $i
 
